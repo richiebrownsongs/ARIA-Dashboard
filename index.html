@@ -416,10 +416,36 @@
  .center .insignia{width:75%}
 }
 @media(max-height:620px){.bottomcards{height:110px}}
+
+/* Stark quote: replace archive copy with one large centered holographic mask. */
+.leftcol>.panel:nth-child(2) .ironrow{
+ display:flex;align-items:center;justify-content:center;
+ min-height:0;flex:1 1 auto;margin:6px 0 0;perspective:550px;
+}
+.leftcol>.panel:nth-child(2) .ironmark{
+ display:block;width:clamp(85px,8.2vw,145px);min-width:0;
+ height:auto;max-height:min(112px,29vh);margin:auto;
+ transform-origin:center center;transform-style:preserve-3d;
+ filter:drop-shadow(0 0 10px #35d8ff) drop-shadow(0 0 23px rgba(15,117,255,.8));
+ animation:starkMaskTurn 13s ease-in-out infinite;
+}
+@keyframes starkMaskTurn{
+ 0%,100%{transform:rotateY(-24deg) translateY(0)}
+ 50%{transform:rotateY(204deg) translateY(-4px)}
+}
+@media(min-width:851px) and (max-width:1350px){
+ .leftcol>.panel:nth-child(2) .ironmark{width:clamp(85px,8vw,113px);max-height:102px}
+}
+@media(max-width:850px){
+ .leftcol>.panel:nth-child(2) .ironmark{width:58px;max-height:65px}
+}
+@media(max-height:620px){
+ .leftcol>.panel:nth-child(2) .ironmark{width:55px;max-height:62px}
+}
 </style></head><body><canvas id="particles"></canvas><div class="gridbg"></div><div class="scan"></div><div class="frame"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
 <div id="app"><header class="head"><div class="lefthead"><span class="led"></span>ARIA SYSTEMS <b>ONLINE</b><div style="margin-top:6px">HUD // MARK VII &nbsp; ◇ &nbsp; NASHVILLE</div></div><div class="headcenter"><div class="aria titleword" aria-label="ARIA"><span class="title-a">A</span><span class="title-r">R</span><span class="title-i">I</span><span class="title-a second-a">A</span></div><div class="cmd">C O M M A N D &nbsp; C E N T E R</div></div><div class="righthead">◈ PERSONAL INTELLIGENCE NETWORK<div id="headtime">SYSTEM INITIALIZING</div></div></header>
 <main class="main"><div class="leftcol"><section class="panel" style="flex:1.12"><div class="kicker">◈ NASHVILLE // LOCAL TIME</div><div class="clock" id="clock">--:--<small id="ampm"></small></div><div class="date" id="date">INITIALIZING...</div></section>
-<section class="panel" style="flex:.96"><div class="kicker">◈ TONY STARK // QUOTE OF THE DAY</div><div class="quote" id="quote">Sometimes you gotta run before you can walk.</div><div class="byline">— TONY STARK / IRON MAN</div><div class="ironrow"><svg class="ironmark" viewBox="0 0 100 110" aria-label="Armored mask symbol" role="img"><path d="M28 14 L43 5 57 5 72 14 87 35 81 80 65 100 35 100 19 80 13 35Z" fill="#062d52" stroke="#46c9ff" stroke-width="3"/><path d="M30 36 L50 29 70 36 76 61 67 86 50 92 33 86 24 61Z" fill="#0d4b7a" stroke="#56d7ff" stroke-width="2"/><path d="M22 57 L42 61 45 70 30 66Z M78 57 L58 61 55 70 70 66Z" fill="#a1f6ff"/><path d="M40 82 L60 82" stroke="#4befff" stroke-width="2"/></svg><div class="fine">STARK ARCHIVES<br>HOLOGRAPHIC ARMOR DISPLAY<br><span style="color:#48dcff">◉ MODULE ACTIVE</span></div></div></section>
+<section class="panel" style="flex:.96"><div class="kicker">◈ TONY STARK // QUOTE OF THE DAY</div><div class="quote" id="quote">Sometimes you gotta run before you can walk.</div><div class="byline">— TONY STARK / IRON MAN</div><div class="ironrow"><svg class="ironmark" viewBox="0 0 100 110" aria-label="Armored mask symbol" role="img"><path d="M28 14 L43 5 57 5 72 14 87 35 81 80 65 100 35 100 19 80 13 35Z" fill="#062d52" stroke="#46c9ff" stroke-width="3"/><path d="M30 36 L50 29 70 36 76 61 67 86 50 92 33 86 24 61Z" fill="#0d4b7a" stroke="#56d7ff" stroke-width="2"/><path d="M22 57 L42 61 45 70 30 66Z M78 57 L58 61 55 70 70 66Z" fill="#a1f6ff"/><path d="M40 82 L60 82" stroke="#4befff" stroke-width="2"/></svg></div></section>
 <section class="panel" style="flex:.9"><div class="kicker">◈ DAILY DIRECTIVE</div><div class="focus" id="focus">Discipline today creates freedom tomorrow.</div></section></div>
 <div class="center"><div class="centercap">◈ ARIA IDENTIFICATION CORE // MK VII</div><div class="circle r1"></div><div class="circle r2"></div><div class="circle r3"></div><div class="circle r4"></div><div class="arc"></div><div class="insignia"><div class="triangle-wrap" aria-label="ARIA suit's glowing triangular emblem, rotating horizontally"><svg class="triangle-mark" viewBox="0 0 220 205" role="img" aria-label="Glowing blue triangular suit emblem"><defs><linearGradient id="triFill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#083e9c"/><stop offset=".49" stop-color="#116fd9"/><stop offset="1" stop-color="#02133f"/></linearGradient><linearGradient id="triEdge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c5fcff"/><stop offset=".5" stop-color="#20beff"/><stop offset="1" stop-color="#d5ffff"/></linearGradient><clipPath id="triClip"><path d="M110 21 L196 171 H24 Z"/></clipPath><filter id="triGlow" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="4.6" result="soft"/><feMerge><feMergeNode in="soft"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M110 8 L210 180 H10 Z" fill="#04205b" stroke="#168df7" stroke-width="3" opacity=".8" filter="url(#triGlow)"/><path d="M110 21 L196 171 H24 Z" fill="url(#triFill)" stroke="url(#triEdge)" stroke-width="6" stroke-linejoin="round" filter="url(#triGlow)"/><g clip-path="url(#triClip)" stroke="#65c8ff" stroke-width=".85" opacity=".55"><path d="M0 42 H220 M0 58 H220 M0 74 H220 M0 90 H220 M0 106 H220 M0 122 H220 M0 138 H220 M0 154 H220"/><path d="M-55 174 L70 0 M-26 174 L99 0 M3 174 L128 0 M32 174 L157 0 M61 174 L186 0 M90 174 L215 0 M119 174 L244 0 M148 174 L273 0"/><path d="M-54 0 L70 174 M-25 0 L99 174 M4 0 L128 174 M33 0 L157 174 M62 0 L186 174 M91 0 L215 174 M120 0 L244 174 M149 0 L273 174"/></g><path d="M110 30 L189 166 H31 Z" fill="none" stroke="#9cefff" stroke-width="1.8" opacity=".8"/><path d="M110 58 L171 156 H49 Z" fill="none" stroke="#b3faff" stroke-width="1.6" opacity=".5"/></svg></div><div class="reactor-name" aria-label="ARIA">ARIA</div></div><div class="holo-base"></div><div class="centerfoot">A R I A &nbsp; / &nbsp; S Y S T E M S &nbsp; O N L I N E<small>PERSONAL INTELLIGENCE INTERFACE</small></div></div>
 <div class="rightcol"><section class="panel" style="flex:1.12"><div class="kicker">◈ WEATHER RADAR // NASHVILLE</div><div class="weatherflex"><div class="radar" aria-hidden="true"></div><div><div class="temp" id="weatherTemp">--°F</div><div class="fine live-state" id="weatherText">CONNECTING WEATHER...</div></div></div><div class="fine" style="margin-top:6px"><span id="weatherDetail">FORECAST // REQUESTING LIVE DATA</span></div></section>
