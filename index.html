@@ -266,6 +266,54 @@
  .rightcol>.panel:first-child .weatherflex .radar{width:42px;height:42px;min-width:42px;flex-basis:42px}
  .rightcol>.panel:first-child .weatherflex .temp{font-size:clamp(31px,4.9vw,45px)}
 }
+
+/* Readable Stark and SYNC displays: use available lower-panel space. */
+.leftcol>.panel:nth-child(2),.rightcol>.panel:nth-child(2){justify-content:space-evenly}
+.leftcol>.panel:nth-child(2) .kicker,.rightcol>.panel:nth-child(2) .kicker{
+ font-size:clamp(13px,1.08vw,17px);font-weight:900;line-height:1.16;margin-bottom:4px
+}
+.leftcol>.panel:nth-child(2) .quote{
+ font-size:clamp(23px,2.1vw,33px);font-weight:900;line-height:1.14;max-width:100%
+}
+.leftcol>.panel:nth-child(2) .byline{
+ font-size:clamp(13px,1.15vw,17px);font-weight:850;margin-top:5px
+}
+.leftcol>.panel:nth-child(2) .ironrow{gap:12px;margin-top:8px;align-items:center}
+.leftcol>.panel:nth-child(2) .ironmark{
+ width:clamp(60px,5.2vw,88px);min-width:clamp(60px,5.2vw,88px);max-height:92px
+}
+.leftcol>.panel:nth-child(2) .ironrow .fine{
+ color:#eaf9ff;font-size:clamp(12px,1.03vw,16px);font-weight:850;line-height:1.35
+}
+.rightcol>.panel:nth-child(2) .sys{
+ width:95%;max-width:none;height:clamp(112px,10vw,160px);margin:6px auto
+}
+.rightcol>.panel:nth-child(2) .sys svg{width:100%;height:100%}
+.rightcol>.panel:nth-child(2) .sysline{stroke:#38baff;stroke-width:2.2}
+.rightcol>.panel:nth-child(2) .sysnode{fill:#8bebff}
+.rightcol>.panel:nth-child(2) .systext{font-size:clamp(15px,1.3vw,20px);font-weight:900;gap:8px}
+.rightcol>.panel:nth-child(2) .systext b{color:#e6ffff;font-weight:900}
+@media(min-width:851px) and (max-width:1350px){
+ .leftcol>.panel:nth-child(2) .quote{font-size:clamp(21px,2vw,27px)}
+ .leftcol>.panel:nth-child(2) .ironmark{width:60px;min-width:60px;max-height:72px}
+ .leftcol>.panel:nth-child(2) .ironrow .fine{font-size:12px}
+ .rightcol>.panel:nth-child(2) .sys{height:clamp(102px,9vw,125px)}
+ .rightcol>.panel:nth-child(2) .systext{font-size:15px}
+}
+@media(max-width:850px){
+ .leftcol>.panel:nth-child(2) .quote{font-size:17px}
+ .leftcol>.panel:nth-child(2) .ironmark{width:36px;min-width:36px;max-height:44px}
+ .leftcol>.panel:nth-child(2) .ironrow .fine{font-size:9px}
+ .rightcol>.panel:nth-child(2) .sys{height:64px}
+ .rightcol>.panel:nth-child(2) .systext{font-size:10px}
+}
+@media(max-height:620px){
+ .leftcol>.panel:nth-child(2) .quote{font-size:18px}
+ .leftcol>.panel:nth-child(2) .ironmark{width:40px;min-width:40px;max-height:45px}
+ .leftcol>.panel:nth-child(2) .ironrow .fine{font-size:10px}
+ .rightcol>.panel:nth-child(2) .sys{height:70px}
+ .rightcol>.panel:nth-child(2) .systext{font-size:11px}
+}
 </style></head><body><canvas id="particles"></canvas><div class="gridbg"></div><div class="scan"></div><div class="frame"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
 <div id="app"><header class="head"><div class="lefthead"><span class="led"></span>ARIA SYSTEMS <b>ONLINE</b><div style="margin-top:6px">HUD // MARK VII &nbsp; ◇ &nbsp; NASHVILLE</div></div><div class="headcenter"><div class="aria titleword" aria-label="ARIA"><span class="title-a">A</span><span class="title-r">R</span><span class="title-i">I</span><span class="title-a second-a">A</span></div><div class="cmd">C O M M A N D &nbsp; C E N T E R</div></div><div class="righthead">◈ PERSONAL INTELLIGENCE NETWORK<div id="headtime">SYSTEM INITIALIZING</div></div></header>
 <main class="main"><div class="leftcol"><section class="panel" style="flex:1.12"><div class="kicker">◈ NASHVILLE // LOCAL TIME</div><div class="clock" id="clock">--:--<small id="ampm"></small></div><div class="date" id="date">INITIALIZING...</div></section>
