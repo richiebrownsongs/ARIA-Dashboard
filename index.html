@@ -455,6 +455,47 @@
  .center .insignia{width:89%!important}
  .center .triangle-wrap{width:86%;height:85%;top:2%;left:7%}
 }
+
+/* Legibility pass: bigger Stark quotes, high/low/wind and the date. */
+.leftcol>.panel:nth-child(2) .quote{
+ font-size:clamp(26px,2.18vw,35px)!important;
+ font-weight:900;line-height:1.13;letter-spacing:-.35px;
+}
+.leftcol>.panel:nth-child(2) .byline{
+ font-size:clamp(15px,1.24vw,20px)!important;
+ font-weight:900;line-height:1.18;
+}
+.rightcol>.panel:first-child #weatherDetail{
+ display:block;color:#fff!important;
+ font-size:clamp(19px,1.62vw,26px)!important;
+ font-weight:900!important;line-height:1.17;
+ letter-spacing:-.35px;
+}
+.rightcol>.panel:first-child #weatherText{
+ color:#fff!important;font-size:clamp(15px,1.28vw,20px)!important;font-weight:900!important;
+}
+.leftcol>.panel:first-child .date{
+ font-size:clamp(24px,2.25vw,36px)!important;
+ font-weight:900;line-height:1.12;letter-spacing:-.45px;
+ margin-top:10px;overflow-wrap:normal;
+}
+@media(min-width:851px) and (max-width:1350px){
+ .leftcol>.panel:nth-child(2) .quote{font-size:clamp(23px,2.05vw,29px)!important}
+ .rightcol>.panel:first-child #weatherDetail{font-size:clamp(18px,1.65vw,23px)!important}
+ .rightcol>.panel:first-child #weatherText{font-size:16px!important}
+ .leftcol>.panel:first-child .date{font-size:clamp(24px,2.18vw,31px)!important}
+}
+@media(max-width:850px){
+ .leftcol>.panel:nth-child(2) .quote{font-size:18px!important}
+ .rightcol>.panel:first-child #weatherDetail{font-size:13px!important}
+ .rightcol>.panel:first-child #weatherText{font-size:11px!important}
+ .leftcol>.panel:first-child .date{font-size:16px!important}
+}
+@media(max-height:620px){
+ .leftcol>.panel:nth-child(2) .quote{font-size:20px!important}
+ .rightcol>.panel:first-child #weatherDetail{font-size:14px!important}
+ .leftcol>.panel:first-child .date{font-size:18px!important}
+}
 </style></head><body><canvas id="particles"></canvas><div class="gridbg"></div><div class="scan"></div><div class="frame"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
 <div id="app"><header class="head"><div class="lefthead"><span class="led"></span>ARIA SYSTEMS <b>ONLINE</b><div style="margin-top:6px">HUD // MARK VII &nbsp; ◇ &nbsp; NASHVILLE</div></div><div class="headcenter"><div class="aria titleword" aria-label="ARIA"><span class="title-a">A</span><span class="title-r">R</span><span class="title-i">I</span><span class="title-a second-a">A</span></div><div class="cmd">C O M M A N D &nbsp; C E N T E R</div></div><div class="righthead">◈ PERSONAL INTELLIGENCE NETWORK<div id="headtime">SYSTEM INITIALIZING</div></div></header>
 <main class="main"><div class="leftcol"><section class="panel" style="flex:1.12"><div class="kicker">◈ NASHVILLE // LOCAL TIME</div><div class="clock" id="clock">--:--<small id="ampm"></small></div><div class="date" id="date">INITIALIZING...</div></section>
