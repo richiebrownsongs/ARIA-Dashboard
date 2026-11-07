@@ -354,6 +354,47 @@
  .bottomcards>.panel:nth-child(2) .itemtitle{font-size:21px}
  .bottomcards>.panel:nth-child(2) .itemdesc{font-size:15px}
 }
+
+/* Reclaim hidden ticker/navigation strip for the information displays. */
+.bottomline{display:none!important;height:0!important;padding:0!important;margin:0!important}
+#app{padding-bottom:21px}
+.bottomcards{height:194px}
+.bottomcards>.panel{padding:12px 15px}
+.bottomcards .kicker{font-size:clamp(13px,1.1vw,17px)}
+.bottomcards .itemtitle{font-size:clamp(24px,2.05vw,33px)}
+.bottomcards .itemdesc{font-size:clamp(18px,1.5vw,24px)}
+.bottomcards>.panel:nth-child(2) .itemtitle{font-size:clamp(31px,2.6vw,42px)}
+.bottomcards>.panel:nth-child(2) .itemdesc{font-size:clamp(21px,1.9vw,29px)}
+/* More space for our hero: enlarge the entire reactor assembly without stretching it. */
+.center .r1{width:96%;max-width:51vh}
+.center .r2{width:86%;max-width:46vh}
+.center .r3{width:77%;max-width:41vh}
+.center .r4{width:66%;max-width:35vh}
+.center .arc{width:99%;height:auto;aspect-ratio:1;max-width:53vh}
+.center .insignia{width:65%;max-width:35vh}
+@media(min-width:851px) and (max-width:1350px){
+ .bottomcards{height:195px}
+ .bottomcards .itemtitle{font-size:26px}
+ .bottomcards .itemdesc{font-size:19px}
+ .bottomcards>.panel:nth-child(2) .itemtitle{font-size:35px}
+ .bottomcards>.panel:nth-child(2) .itemdesc{font-size:24px}
+}
+@media(max-width:850px){
+ .bottomcards{height:142px}
+ .bottomcards>.panel{padding:8px}
+ .bottomcards .itemtitle{font-size:17px}
+ .bottomcards .itemdesc{font-size:13px}
+ .bottomcards>.panel:nth-child(2) .itemtitle{font-size:22px}
+ .bottomcards>.panel:nth-child(2) .itemdesc{font-size:16px}
+ .center .insignia{width:63%}
+}
+@media(max-height:620px){
+ .bottomcards{height:126px}
+ .bottomcards .itemtitle{font-size:18px}
+ .bottomcards .itemdesc{font-size:13px}
+ .bottomcards>.panel:nth-child(2) .itemtitle{font-size:23px}
+ .bottomcards>.panel:nth-child(2) .itemdesc{font-size:17px}
+}
 </style></head><body><canvas id="particles"></canvas><div class="gridbg"></div><div class="scan"></div><div class="frame"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
 <div id="app"><header class="head"><div class="lefthead"><span class="led"></span>ARIA SYSTEMS <b>ONLINE</b><div style="margin-top:6px">HUD // MARK VII &nbsp; ◇ &nbsp; NASHVILLE</div></div><div class="headcenter"><div class="aria titleword" aria-label="ARIA"><span class="title-a">A</span><span class="title-r">R</span><span class="title-i">I</span><span class="title-a second-a">A</span></div><div class="cmd">C O M M A N D &nbsp; C E N T E R</div></div><div class="righthead">◈ PERSONAL INTELLIGENCE NETWORK<div id="headtime">SYSTEM INITIALIZING</div></div></header>
 <main class="main"><div class="leftcol"><section class="panel" style="flex:1.12"><div class="kicker">◈ NASHVILLE // LOCAL TIME</div><div class="clock" id="clock">--:--<small id="ampm"></small></div><div class="date" id="date">INITIALIZING...</div></section>
