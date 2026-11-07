@@ -314,6 +314,46 @@
  .rightcol>.panel:nth-child(2) .sys{height:70px}
  .rightcol>.panel:nth-child(2) .systext{font-size:11px}
 }
+
+/* Echo Show legibility: bottom panels should use their available area. */
+.bottomcards>.panel{display:flex;flex-direction:column;justify-content:center;min-height:0;gap:4px;padding:12px 14px}
+.bottomcards .kicker{font-size:clamp(13px,1.06vw,17px);line-height:1.15;margin:0 0 5px;font-weight:900;color:#6ce9ff}
+.bottomcards .itemtitle{font-size:clamp(23px,2.03vw,31px);font-weight:900;line-height:1.12;margin:0 0 6px;color:#f2fcff;overflow-wrap:break-word}
+.bottomcards .itemdesc{font-size:clamp(17px,1.52vw,24px);font-weight:850;line-height:1.2;color:#e2f7ff;overflow-wrap:break-word}
+.bottomcards .live-link{min-height:0;overflow:hidden}
+.bottomcards>.panel:nth-child(2) .kicker{margin:0 0 8px;font-size:clamp(14px,1.15vw,18px)}
+.bottomcards>.panel:nth-child(2) .itemtitle{font-size:clamp(27px,2.35vw,37px);margin:0 0 9px;line-height:1.07}
+.bottomcards>.panel:nth-child(2) .itemdesc{font-size:clamp(19px,1.7vw,27px);line-height:1.18}
+.leftcol>.panel:first-child .clock{font-size:92px;line-height:1.02;letter-spacing:-2.8px}
+.leftcol>.panel:first-child .clock small{font-size:.26em}
+.leftcol>.panel:first-child{overflow:hidden}
+@media(min-width:851px) and (max-width:1350px){
+ .bottomcards{height:177px}
+ .bottomcards>.panel{padding:11px 13px}
+ .bottomcards .kicker{font-size:13px}
+ .bottomcards .itemtitle{font-size:25px}
+ .bottomcards .itemdesc{font-size:19px}
+ .bottomcards>.panel:nth-child(2) .itemtitle{font-size:32px}
+ .bottomcards>.panel:nth-child(2) .itemdesc{font-size:22px}
+ .leftcol>.panel:first-child .clock{font-size:92px}
+}
+@media(max-width:850px){
+ .bottomcards{height:126px}
+ .bottomcards>.panel{padding:6px 7px;gap:2px}
+ .bottomcards .kicker{font-size:10px}
+ .bottomcards .itemtitle{font-size:16px;margin-bottom:2px}
+ .bottomcards .itemdesc{font-size:12px}
+ .bottomcards>.panel:nth-child(2) .itemtitle{font-size:19px}
+ .bottomcards>.panel:nth-child(2) .itemdesc{font-size:14px}
+ .leftcol>.panel:first-child .clock{font-size:60px}
+}
+@media(max-height:620px){
+ .bottomcards{height:112px}
+ .bottomcards .itemtitle{font-size:17px}
+ .bottomcards .itemdesc{font-size:12px}
+ .bottomcards>.panel:nth-child(2) .itemtitle{font-size:21px}
+ .bottomcards>.panel:nth-child(2) .itemdesc{font-size:15px}
+}
 </style></head><body><canvas id="particles"></canvas><div class="gridbg"></div><div class="scan"></div><div class="frame"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
 <div id="app"><header class="head"><div class="lefthead"><span class="led"></span>ARIA SYSTEMS <b>ONLINE</b><div style="margin-top:6px">HUD // MARK VII &nbsp; ◇ &nbsp; NASHVILLE</div></div><div class="headcenter"><div class="aria titleword" aria-label="ARIA"><span class="title-a">A</span><span class="title-r">R</span><span class="title-i">I</span><span class="title-a second-a">A</span></div><div class="cmd">C O M M A N D &nbsp; C E N T E R</div></div><div class="righthead">◈ PERSONAL INTELLIGENCE NETWORK<div id="headtime">SYSTEM INITIALIZING</div></div></header>
 <main class="main"><div class="leftcol"><section class="panel" style="flex:1.12"><div class="kicker">◈ NASHVILLE // LOCAL TIME</div><div class="clock" id="clock">--:--<small id="ampm"></small></div><div class="date" id="date">INITIALIZING...</div></section>
@@ -327,7 +367,7 @@
 <footer class="bottomline"><div class="ticker"><b>◉ ARIA INTEL FEED &nbsp; </b><span class="moving">STARK PROTOCOL ONLINE &nbsp; ◆ &nbsp; ARIA GOLF ACADEMY READY &nbsp; ◆ &nbsp; DALLAS COWBOYS WATCH QUEUED &nbsp; ◆ &nbsp; LIVE WEATHER REQUEST ACTIVE / NEWS REQUIRES HOSTED FEED &nbsp; ◆ &nbsp; MISSION CONTROL OPERATIONAL &nbsp; ◆ &nbsp; STARK PROTOCOL ONLINE &nbsp; ◆ &nbsp; ARIA GOLF ACADEMY READY &nbsp; ◆ &nbsp; DALLAS COWBOYS WATCH QUEUED &nbsp; ◆ &nbsp;</span></div><div class="buttons"><button class="btn active" id="home">MISSION</button><button class="btn" id="next">NEXT DIRECTIVE</button><button class="btn active" id="auto">AUTO: ON</button><button class="btn" id="fullscreen">FULL SCREEN</button><span id="screenStatus" role="status" style="font-size:10px;color:#9edbfa"></span><div class="endstatus">SILK GUARD <b id="guard">STANDBY</b> &nbsp; ◇ &nbsp; ARIA / V9</div></div></footer></div>
 <div id="start"><div class="startup">ARIA</div><div class="starthead">COMMAND CENTER</div><div class="startsub">STARK PROTOCOL // MARK VII</div><button class="activate" id="activate">ACTIVATE ARIA</button><div class="startnote">Activates the animated dashboard and quiet Silk keep-open audio. Alexa remains installed and unchanged. Browser behavior may vary.</div></div>
 <audio id="silkguard" src="silence-loop.wav" loop preload="auto" playsinline style="display:none"></audio>
-<script>(function(){'use strict';function el(x){return document.getElementById(x)}function clock(){var d=new Date();var t=d.toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit',hour12:true}).split(' ');el('clock').innerHTML=t[0]+'<small> '+(t[1]||'')+'</small>';el('date').textContent=d.toLocaleDateString('en-US',{timeZone:'America/Chicago',weekday:'short',month:'short',day:'numeric',year:'numeric'});el('headtime').textContent=d.toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'2-digit',minute:'2-digit'})+' // CENTRAL'}clock();setInterval(clock,1000);
+<script>(function(){'use strict';function el(x){return document.getElementById(x)}function clock(){var d=new Date();var t=d.toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'numeric',minute:'2-digit',hour12:true}).split(' ');el('clock').innerHTML=t[0]+'<small> '+(t[1]||'')+'</small>';el('date').textContent=d.toLocaleDateString('en-US',{timeZone:'America/Chicago',weekday:'short',month:'short',day:'numeric',year:'numeric'});el('headtime').textContent=d.toLocaleTimeString('en-US',{timeZone:'America/Chicago',hour:'2-digit',minute:'2-digit'})+' // CENTRAL';fitClock()}function fitClock(){var node=el('clock');if(!node||!node.parentNode)return;var max=Math.max(36,Math.min(105,Math.floor(node.parentNode.clientWidth*.45)));node.style.fontSize=max+'px';var available=node.clientWidth-2;var tries=0;while(node.scrollWidth>available&&max>32&&tries<40){max-=2;node.style.fontSize=max+'px';tries++}}clock();setInterval(clock,1000);window.addEventListener('resize',fitClock);
 var quotes=['Sometimes you gotta run before you can walk.','I am Iron Man.','Genius, billionaire, playboy, philanthropist.','I love you 3000.'];var focus=['Discipline today creates freedom tomorrow.','Build something extraordinary today.','Keep moving forward. The mission matters.','Make progress. Celebrate the small wins.'];var titles=['BALL-FIRST CONTACT','TEMPO & BALANCE','CONNECTION DRILL','HOLD YOUR FINISH'];var drills=['Use the Ball First Board for 10 controlled iron swings. Hold your finish.','Make five half-speed swings, then five smooth full swings.','Use The Connector for ten swings, keeping arms and torso synchronized.','Hold a balanced finish for three seconds after each swing.'];var day=Math.floor(Date.now()/86400000);var index=day%4;var auto=true;function refresh(){el('quote').textContent=quotes[index];el('focus').textContent=focus[index];el('mission').textContent=['CREATE SOMETHING GREAT','STAY ON THE MISSION','BUILD THE NEXT CHAPTER','MAKE IT COUNT'][index];el('missiondetail').textContent=['Move one of your big ideas forward today.','Protect your focus and finish one meaningful task.','Progress compounds when you keep showing up.','One good decision. One better day. Keep building.'][index];el('golfTitle').textContent=titles[index];el('golfText').textContent=drills[index];}refresh();el('next').onclick=function(){index=(index+1)%4;refresh()};el('auto').onclick=function(){auto=!auto;this.textContent='AUTO: '+(auto?'ON':'OFF');this.className='btn'+(auto?' active':'')};el('home').onclick=function(){index=day%4;refresh()};setInterval(function(){if(auto){index=(index+1)%4;refresh()}},60000);
 var guard=el('silkguard');guard.volume=.05;function play(){try{var p=guard.play();if(p&&p.then)p.then(function(){el('guard').textContent='ACTIVE'}).catch(function(){el('guard').textContent='RETRY'});else el('guard').textContent='STARTED'}catch(e){el('guard').textContent='RETRY'}}function fullscreenElement(){return document.fullscreenElement||document.webkitFullscreenElement}
 function screenState(){el('fullscreen').textContent=fullscreenElement()?'EXIT FULL SCREEN':'FULL SCREEN';el('screenStatus').textContent=''}
