@@ -442,6 +442,19 @@
 @media(max-height:620px){
  .leftcol>.panel:nth-child(2) .ironmark{width:55px;max-height:62px}
 }
+
+/* Bigger hero centerpiece while retaining the EXISTING uninterrupted triangle spin. */
+.center .insignia{width:min(89%,430px)!important;max-width:none!important;flex-shrink:0}
+.center .triangle-wrap{width:86%;height:85%;top:2%;left:7%;animation:triangleOrbit 16s ease-in-out infinite}
+.center .r1{width:min(99%,505px)}
+.center .r2{width:min(94%,475px)}
+.center .r3{width:min(88%,442px)}
+.center .r4{width:min(80%,405px)}
+.center .arc{width:min(100%,510px)}
+@media(max-width:850px){
+ .center .insignia{width:89%!important}
+ .center .triangle-wrap{width:86%;height:85%;top:2%;left:7%}
+}
 </style></head><body><canvas id="particles"></canvas><div class="gridbg"></div><div class="scan"></div><div class="frame"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
 <div id="app"><header class="head"><div class="lefthead"><span class="led"></span>ARIA SYSTEMS <b>ONLINE</b><div style="margin-top:6px">HUD // MARK VII &nbsp; ◇ &nbsp; NASHVILLE</div></div><div class="headcenter"><div class="aria titleword" aria-label="ARIA"><span class="title-a">A</span><span class="title-r">R</span><span class="title-i">I</span><span class="title-a second-a">A</span></div><div class="cmd">C O M M A N D &nbsp; C E N T E R</div></div><div class="righthead">◈ PERSONAL INTELLIGENCE NETWORK<div id="headtime">SYSTEM INITIALIZING</div></div></header>
 <main class="main"><div class="leftcol"><section class="panel" style="flex:1.12"><div class="kicker">◈ NASHVILLE // LOCAL TIME</div><div class="clock" id="clock">--:--<small id="ampm"></small></div><div class="date" id="date">INITIALIZING...</div></section>
