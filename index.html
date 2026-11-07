@@ -165,6 +165,51 @@
  .leftcol>.panel:first-child .date{font-size:13px}
  .leftcol>.panel:first-child .fine{font-size:9px}
 }
+
+/* ARIA large-type layout: remove secondary side cards, keep reactor untouched. */
+.leftcol>.panel:last-child,.rightcol>.panel:last-child{display:none}
+.leftcol>.panel:nth-child(2),.rightcol>.panel:nth-child(2){flex:1.12!important}
+.leftcol>.panel:nth-child(2){display:flex;flex-direction:column;justify-content:center}
+.leftcol>.panel:nth-child(2) .quote{font-size:clamp(21px,1.8vw,31px);font-weight:850;line-height:1.2}
+.leftcol>.panel:nth-child(2) .byline{font-size:clamp(12px,1.03vw,16px)}
+.leftcol>.panel:nth-child(2) .ironmark{width:37px;min-width:37px;max-height:50px}
+.rightcol>.panel:first-child{display:flex;flex-direction:column;justify-content:center}
+.rightcol>.panel:first-child .weatherflex{gap:9px;align-items:center;justify-content:space-between}
+.rightcol>.panel:first-child .radar{width:66px;height:66px}
+.rightcol>.panel:first-child .temp{font-size:clamp(48px,4.8vw,74px);font-weight:900;letter-spacing:-2px;white-space:nowrap}
+.rightcol>.panel:first-child .fine{font-size:clamp(12px,1.05vw,16px);font-weight:750}
+.rightcol>.panel:nth-child(2){display:flex;flex-direction:column;justify-content:center}
+.rightcol>.panel:nth-child(2) .sys{height:90px}
+.rightcol>.panel:nth-child(2) .systext{font-size:clamp(13px,1.1vw,17px)}
+.bottomcards{height:171px}
+.bottomcards .itemtitle{font-size:clamp(19px,1.7vw,26px);line-height:1.13;margin-bottom:6px}
+.bottomcards .itemdesc{font-size:clamp(14px,1.26vw,19px);line-height:1.25}
+.bottomcards .kicker{font-size:clamp(12px,1.02vw,15px);margin-bottom:9px}
+@media (min-width:851px) and (max-width:1350px){
+ .leftcol>.panel:nth-child(2) .quote{font-size:clamp(20px,2vw,26px)}
+ .rightcol>.panel:first-child .temp{font-size:clamp(47px,4.8vw,63px)}
+ .rightcol>.panel:first-child .radar{width:58px;height:58px}
+ .rightcol>.panel:first-child .fine{font-size:12px}
+ .bottomcards{height:168px}
+ .bottomcards .itemtitle{font-size:21px}
+ .bottomcards .itemdesc{font-size:15px}
+ .bottomcards .kicker{font-size:12px}
+}
+@media(max-width:850px){
+ .leftcol>.panel:nth-child(2) .quote{font-size:17px}
+ .rightcol>.panel:first-child .temp{font-size:37px}
+ .rightcol>.panel:first-child .radar{width:45px;height:45px}
+ .bottomcards{height:126px}
+ .bottomcards .itemtitle{font-size:15px}
+ .bottomcards .itemdesc{font-size:11px}
+ .bottomcards .kicker{font-size:10px}
+}
+@media(max-height:620px){
+ .bottomcards{height:112px}
+ .bottomcards .itemtitle{font-size:16px}
+ .bottomcards .itemdesc{font-size:11px}
+ .leftcol>.panel:nth-child(2) .quote{font-size:18px}
+}
 </style></head><body><canvas id="particles"></canvas><div class="gridbg"></div><div class="scan"></div><div class="frame"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
 <div id="app"><header class="head"><div class="lefthead"><span class="led"></span>ARIA SYSTEMS <b>ONLINE</b><div style="margin-top:6px">HUD // MARK VII &nbsp; ◇ &nbsp; NASHVILLE</div></div><div class="headcenter"><div class="aria titleword" aria-label="ARIA"><span class="title-a">A</span><span class="title-r">R</span><span class="title-i">I</span><span class="title-a second-a">A</span></div><div class="cmd">C O M M A N D &nbsp; C E N T E R</div></div><div class="righthead">◈ PERSONAL INTELLIGENCE NETWORK<div id="headtime">SYSTEM INITIALIZING</div></div></header>
 <main class="main"><div class="leftcol"><section class="panel" style="flex:1.12"><div class="kicker">◈ NASHVILLE // LOCAL TIME</div><div class="clock" id="clock">--:--<small id="ampm"></small></div><div class="date" id="date">INITIALIZING...</div><div class="fine" style="margin-top:7px">CENTRAL TIME &nbsp; ◇ &nbsp; MISSION CONTROL</div></section>
@@ -174,7 +219,7 @@
 <div class="rightcol"><section class="panel" style="flex:1.12"><div class="kicker">◈ WEATHER RADAR // NASHVILLE</div><div class="weatherflex"><div class="radar" aria-hidden="true"></div><div><div class="temp" id="weatherTemp">--°F</div><div class="fine live-state" id="weatherText">CONNECTING WEATHER...</div></div></div><div class="fine" style="margin-top:6px"><span id="weatherDetail">FORECAST // REQUESTING LIVE DATA</span></div></section>
 <section class="panel" style="flex:.96"><div class="kicker">◈ ARIA SYSTEM NETWORK // SYNC</div><div class="sys"><svg viewBox="0 0 190 80"><g class="sysline"><path d="M95 40 L24 12 M95 40 L164 11 M95 40 L18 68 M95 40 L172 68 M95 40 L95 5 M95 40 L94 76"/></g><circle class="syscenter" cx="95" cy="40" r="19"/><text x="95" y="43" text-anchor="middle" font-size="10" fill="#b8f9ff">ARIA</text><g class="sysnode"><circle cx="24" cy="12" r="4"/><circle cx="164" cy="11" r="4"/><circle cx="18" cy="68" r="4"/><circle cx="172" cy="68" r="4"/><circle cx="95" cy="5" r="4"/><circle cx="94" cy="76" r="4"/></g></svg></div><div class="systext"><span>HUD <b>ACTIVE</b></span><span>FEEDS <b id="feedSync">STANDBY</b></span></div></section>
 <section class="panel" style="flex:.9"><div class="kicker">◈ ARIA GOLF ACADEMY</div><div class="itemtitle" id="golfTitle">BALL-FIRST CONTACT</div><div class="itemdesc" id="golfText">Use the Ball First Board for 10 controlled iron swings. Hold your finish.</div><div class="fine" style="margin-top:7px">◉ TODAY'S TRAINING PROTOCOL</div></section></div></main>
-<div class="bottomcards"><div class="panel"><div class="kicker">◈ COWBOYS // SPORTS COMMAND <span class="star">★</span></div><a class="live-link" id="cowboysLink" href="https://www.bloggingtheboys.com/" target="_blank" rel="noopener"><div class="itemtitle" id="cowboysTitle">DALLAS COWBOYS WATCH</div><div class="itemdesc" id="cowboysDesc">Waiting for hosted Cowboys news feed.</div></a></div><div class="panel"><div class="kicker">◈ MISSION FOCUS // TODAY</div><div class="itemtitle" id="mission">MAKE IT COUNT</div><div class="itemdesc" id="missiondetail">One good decision. One better day. Keep building.</div></div><div class="panel"><div class="kicker">◈ WORLD INTELLIGENCE</div><a class="live-link" id="foxLink" href="https://www.foxnews.com/" target="_blank" rel="noopener"><div class="itemtitle" id="foxTitle">FOX NEWS // STANDBY</div><div class="itemdesc" id="foxDesc">Waiting for hosted Fox headline feed.</div></a></div></div>
+<div class="bottomcards"><div class="panel"><div class="kicker">◈ COWBOYS // SPORTS COMMAND <span class="star">★</span></div><a class="live-link" id="cowboysLink" href="https://www.bloggingtheboys.com/" target="_blank" rel="noopener"><div class="itemtitle" id="cowboysTitle">DALLAS COWBOYS WATCH</div><div class="itemdesc" id="cowboysDesc">Waiting for hosted Cowboys news feed.</div></a></div><div class="panel"><div class="kicker">◈ DAILY OBJECTIVE // TODAY</div><div class="itemtitle" id="mission">MAKE IT COUNT</div><div class="itemdesc" id="missiondetail">One good decision. One better day. Keep building.</div></div><div class="panel"><div class="kicker">◈ WORLD INTELLIGENCE</div><a class="live-link" id="foxLink" href="https://www.foxnews.com/" target="_blank" rel="noopener"><div class="itemtitle" id="foxTitle">FOX NEWS // STANDBY</div><div class="itemdesc" id="foxDesc">Waiting for hosted Fox headline feed.</div></a></div></div>
 <footer class="bottomline"><div class="ticker"><b>◉ ARIA INTEL FEED &nbsp; </b><span class="moving">STARK PROTOCOL ONLINE &nbsp; ◆ &nbsp; ARIA GOLF ACADEMY READY &nbsp; ◆ &nbsp; DALLAS COWBOYS WATCH QUEUED &nbsp; ◆ &nbsp; LIVE WEATHER REQUEST ACTIVE / NEWS REQUIRES HOSTED FEED &nbsp; ◆ &nbsp; MISSION CONTROL OPERATIONAL &nbsp; ◆ &nbsp; STARK PROTOCOL ONLINE &nbsp; ◆ &nbsp; ARIA GOLF ACADEMY READY &nbsp; ◆ &nbsp; DALLAS COWBOYS WATCH QUEUED &nbsp; ◆ &nbsp;</span></div><div class="buttons"><button class="btn active" id="home">MISSION</button><button class="btn" id="next">NEXT DIRECTIVE</button><button class="btn active" id="auto">AUTO: ON</button><button class="btn" id="fullscreen">FULL SCREEN</button><span id="screenStatus" role="status" style="font-size:10px;color:#9edbfa"></span><div class="endstatus">SILK GUARD <b id="guard">STANDBY</b> &nbsp; ◇ &nbsp; ARIA / V9</div></div></footer></div>
 <div id="start"><div class="startup">ARIA</div><div class="starthead">COMMAND CENTER</div><div class="startsub">STARK PROTOCOL // MARK VII</div><button class="activate" id="activate">ACTIVATE ARIA</button><div class="startnote">Activates the animated dashboard and quiet Silk keep-open audio. Alexa remains installed and unchanged. Browser behavior may vary.</div></div>
 <audio id="silkguard" src="silence-loop.wav" loop preload="auto" playsinline style="display:none"></audio>
